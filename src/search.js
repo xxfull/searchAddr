@@ -2,14 +2,15 @@ const web3 = require('@solana/web3.js');
 const fs = require("fs");
 
 const filePath = 'data/keypair.json'
-
+let i = 0
 while (true) {
     const wallet = web3.Keypair.generate();
 
     const wallet_str = wallet.publicKey.toString('base58')
 
     const str_1 = wallet_str[0]
-   
+    i += 1
+    console.log(i)
     if(wallet_str[1] == str_1 && wallet_str[2] == str_1 && wallet_str[3] == str_1 && wallet_str[4] == str_1 && wallet_str[5] == str_1 ){
         writeLog(wallet)
     }
